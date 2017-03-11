@@ -9,4 +9,9 @@ router.get('/', controllers.homecontroller.index);
 //rutas para productos
 router.get('/productos', controllers.productoscontroller.getProductos);
 
+router.get('/nuevo', controllers.productoscontroller.getNuevoProducto);
+
+router.post('/crearproducto', controllers.productoscontroller.postNuevoProducto);
+
+
 module.exports = router;
