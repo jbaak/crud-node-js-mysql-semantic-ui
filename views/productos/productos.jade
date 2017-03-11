@@ -1,0 +1,25 @@
+extends ../default
+
+block content
+  include ../templates/nav
+  div(class=['ui', 'container', 'grid', 'stackable'])
+    div(class=['sixteen', 'wide', 'column'])
+      h3(class=['ui','header','blue', 'dividing'])= 'Lista de productos'
+
+      table(class=['ui','table','celled'] id ="tbl-prodcutos")
+        thead
+          tr
+            th= 'ID'
+            th= 'Nombre'
+            th= 'Precio'
+            th= 'Stock'
+            th= 'Fecha de creacion'
+            th= 'Aciones'
+        tbody
+          each producto in productos
+            tr
+              td= producto.id_producto
+              td= producto.nombre
+              td= producto.precio
+              td= producto.stock
+              td= producto.fecha_creacion
