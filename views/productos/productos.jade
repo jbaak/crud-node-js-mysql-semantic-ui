@@ -6,7 +6,7 @@ block content
     div(class=['sixteen', 'wide', 'column'])
       h3(class=['ui','header','blue', 'dividing'])= 'Lista de productos'
 
-      table(class=['ui','table','celled'] id ="tbl-prodcutos")
+      table(class=['ui','table','celled'] id ="tbl-productos")
         thead
           tr
             th= 'ID'
@@ -18,8 +18,15 @@ block content
         tbody
           each producto in productos
             tr
-              td= producto.id_producto
+              td(id="id_producto")= producto.id_producto
               td= producto.nombre
               td= producto.precio
               td= producto.stock
               td= producto.fecha_creacion
+              td
+                a(class=['ui', 'button', 'icon'] href='#' data-tooltip='Eliminar' data-position='top center' data-inverted='' id="btn-eliminar")
+                  i(class=['trash','icon'])
+                a(class=['ui', 'button', 'icon'] href='#' data-tooltip='Modificar' data-position='top center' data-inverted='')
+                  i(class=['edit','icon'])
+
+  script(src='/javascripts/productos.js')

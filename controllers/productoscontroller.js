@@ -42,5 +42,23 @@ module.exports={
 
         res.render('productos/nuevo', {info: 'Producto creado correctamente'});
     },
+    eliminarProducto:function(req, res, next){
+        var id= req.body.id;
+        var respuesta={ res: false };
+
+        var config = require('.././database/config');
+        var db = mysql.createConnection(config);
+        db.connect();
+
+        db.query('delete from productos where id_producto = ?', id, function(err, rows, fields){
+            if(err) throw err;
+            
+            respuesta.res = true;
+            
+            db.end();
+
+            res.json(respuesta);
+        });
+    }, 
 
 }

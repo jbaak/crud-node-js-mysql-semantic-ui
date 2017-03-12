@@ -13,5 +13,8 @@ router.get('/nuevo', controllers.productoscontroller.getNuevoProducto);
 
 router.post('/crearproducto', controllers.productoscontroller.postNuevoProducto);
 
+router.post('/eliminarproducto', controllers.productoscontroller.eliminarProducto);
+
+
 
 module.exports = router;
