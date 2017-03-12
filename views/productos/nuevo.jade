@@ -20,6 +20,12 @@ block content
               input(type="text" name="stock" placeholder="Stock")
           button(class=['ui', 'button', 'basic', 'black'])='Crear producto'
           div(class=['ui', 'message', 'error'])
+      if info != undefined
+        div(class=['ui', 'message', 'success'])
+          i(class=['close','icon '])
+          div(class="header")='Producto guardado'
+          p= info
+
   script(src='/javascripts/validacion.js')
 
 
